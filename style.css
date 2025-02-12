@@ -1,0 +1,27 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #0a0101;
+    
+}
+
+.container {
+    background-color: blue;
+    
+}
+
+
+
+#footerId {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    background-color: rgb(32, 29, 29);
+}
