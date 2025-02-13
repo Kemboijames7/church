@@ -41,6 +41,13 @@ header {
     font-size: 28px;
 }
 
+#our_services{
+    background-color: rgba(0, 22, 47, .92);
+    color: #fff;
+    line-height: 28px;
+    padding: 10px;
+}
+
 #information {
     color: #fff;
     line-height: 28px;
