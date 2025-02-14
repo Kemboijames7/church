@@ -24,7 +24,6 @@ header {
 
 
 .aic_logo {
-    
     width: 40px;
     height: 40px;
     border-radius: 60%;
@@ -33,8 +32,76 @@ header {
 
 .container {
     background-color: blue;
-    
 }
+
+.upcoming_events{
+
+
+}
+
+.events_top {
+    background: 0 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: block;
+    line-height: 1;
+    position: relative;
+    text-align: center;
+   
+}
+
+.contact_us{
+    padding: 100px;
+    text-align: center;
+    background-image: url(90883796_2757458754383709_6167988910149337088_n.jpg);
+}
+
+fieldset {
+    max-width: 800px;
+    margin: auto;
+    text-decoration: none;
+    padding: 10px;
+}
+.field_label{
+    font-weight: bold;
+    padding: 10px;
+}
+
+.required-label{
+    color: #bf0a30;
+}
+.inputName {
+    font-size: 16px;
+display: flex;
+border-color: #000;
+color: grey;
+font-weight: 400;
+justify-content: space-between;
+position: relative;
+align-items: start;
+margin-bottom:15px;
+max-width: 50%;
+
+}
+
+.inputEmail{
+    width: 90px;
+}
+
+.wpforms-submit {
+    margin-top: 10px;
+    font-size: 18px;
+    background-color: #066aab;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+textarea{
+    border-radius: 10px;
+   
+}
+
 .ri-cross-line{
     
     color: rgb(75, 75, 70);
@@ -98,10 +165,38 @@ padding: 10px;
 }
 
 #footerId {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
     padding: 10px;
     color: #fff;
     background-color: rgb(32, 29, 29);
 }
+#footerId p {
+    padding: 5px;
+}
+
+.footer__socials a {
+    text-decoration: none;
+    padding: 6px 10px;
+    margin-right: 5px;
+    font-size: 1.25rem;
+    color: #fff;
+    background-color: #3b5999;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .footer__socials a .ri-facebook-fill{
+    background-color: #3b5999;
+    
+  }
+  .footer__socials a .ri-instagram-line{
+    background-color: #3b5999;
+    
+  }
+
 
 
 @keyframes shadow-blink {
