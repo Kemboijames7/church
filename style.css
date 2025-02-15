@@ -31,7 +31,16 @@ header {
 }
 
 .container {
-    background-color: blue;
+    background-color: rgb(170, 158, 143);
+}
+
+.ri-heart-3-line {
+    border-radius: 10px;
+    color: #bf0a30;
+}
+
+.ri-book-open-fill {
+    color: #ced4da;
 }
 
 
@@ -56,6 +65,12 @@ header {
     color: white;
     font-size: 16px;
 }
+
+.latest_sermon > button :hover {
+    background-color: #000;
+    cursor: pointer;
+}
+
 
 .latest_sermon{
     margin: 10px;
