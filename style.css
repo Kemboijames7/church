@@ -34,6 +34,39 @@ header {
     background-color: blue;
 }
 
+
+#our_Sermon {
+    background-image: url(./images/channels4_banner.jpg), radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+    
+}
+
+.latest_sermon button {
+
+    background-color: #00060ae3;
+    padding: 10px;
+    border: 2px black;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+}
+
+.latest_sermon{
+    margin: 10px;
+    background-color: #066aab;
+    padding: 10px;
+    border-radius: 10px;
+
+   
+
+}
+
 .upcoming_events{
     text-align: center;
     margin-bottom: 15px;
@@ -235,7 +268,7 @@ padding: 10px;
     100% {
         opacity: 1;
         transform: scale(1);
-        background-color: #864452;
+        background-color: #bf0a30;
         box-shadow: 0 0 5px 5px rgba(155, 77, 94, 0.8);
     }
 }
