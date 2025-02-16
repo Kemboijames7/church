@@ -30,8 +30,38 @@ header {
     overflow-x: hidden;
 }
 
+img {
+    border-radius: 40px;
+}
+
+
+nav {
+    text-align: center;
+    background-color: #938f7f;
+
+}
+
 .container {
     background-color: rgb(170, 158, 143);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+
+.container button {
+    background-color: #066aab;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+.container button :hover {
+    color: #050504;
+    cursor: pointer;
 }
 
 .ri-heart-3-line {
@@ -45,19 +75,25 @@ header {
 
 
 #our_Sermon {
-    background-image: url(./images/channels4_banner.jpg), radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
-    background-repeat: no-repeat;
+  background-image: url(./images/Church\ -\ Google\ Chrome\ 16_02_2025\ 15_46_46.png), radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.8)); 
+  background-size: 100% auto;  
+  background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 30px;
     text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
     
 }
 
-.latest_sermon button {
+#our_Sermon  h3 {
+    color: yellow;
+}
 
+.latest_sermon button {
+    overflow-x: hidden;
     background-color: #00060ae3;
     padding: 10px;
     border: 2px black;
@@ -78,9 +114,48 @@ header {
     padding: 10px;
     border-radius: 10px;
 
-   
-
 }
+
+.click_here {
+   
+    color: #060606;
+}
+
+
+
+.arrow_btn {
+    padding: 2px;
+    border: 1px dotted;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    transition: color 0.3s ease;  
+    color: #f70707; 
+    margin-bottom: 10px; 
+}
+
+.arrow_btn:hover {
+    color: #000; 
+    border: none;
+    transition: color 0.3s ease;
+}
+
+.arrow_btn:hover .btn_click a {
+    color: #000;  
+    
+}
+
+.btn_click a {
+    color: #bf0a30;
+    text-decoration: none; /* Remove underline from link */
+}
+
+.arrow_click i { /* Style the arrow icon */
+    font-size: 20px; /* Adjust as needed */
+}
+
+
+
 
 .upcoming_events{
     text-align: center;
