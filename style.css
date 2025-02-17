@@ -3,24 +3,109 @@ html, body {
     padding: 0;
     box-sizing: border-box;
     cursor: pointer;
+    overflow-x: hidden;
+}
+/* Header Styling */
+header {
+    background-color: #efdede;
+    padding: 10px 20px;
+    width: 100%;
+    position: relative;
 }
 
-header {
-
-    background-color: #efdede;
+/* Navigation Bar: Flexbox Layout */
+.nav__bar {
     display: flex;
     align-items: center;
-    justify-content:space-between;
-    padding: 10px 20px 10px 20px;
+    justify-content: space-around; /* Keeps three elements separate */
+   
 }
 
+/* Left: Logo & Title */
 .header_name {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  text-decoration: underline;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: bold;
 
 }
+
+/* Center: Search Bar */
+.search {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.search input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search button {
+    background-color: #0f172a;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+/* Right: Menu Button */
+.nav_menu_btn {
+    font-size: 1.5rem;
+    color: #0f172a;
+    cursor: pointer;
+    display: block; /* Always visible */
+}
+
+/* Hidden Navigation Menu */
+.nav_links {
+    list-style: none;
+    position: absolute;
+    top: 100%; /* Drops down below the header */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 1em;
+    display: none;  
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+
+.nav_links.open {
+    color: #000;
+    background: #898989;
+    display: flex;
+}
+
+
+.nav_links li {
+    text-align: start;
+    padding: 0 20px;
+    display: inline-block;
+    width: 100%;
+    border: 0;
+    border-bottom-width: 1px;
+    border-style: solid;
+}
+
+.nav_links a {
+    text-decoration: none;
+    color: #0f172a;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.nav_links a:hover {
+    color: #d94948;
+}
+
+
 
 
 .aic_logo {
