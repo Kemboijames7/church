@@ -18,6 +18,20 @@ navLinks.addEventListener("click", () => {
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdown = document.querySelector(".dropdown");
+  const dropdownMenu = document.querySelector(".dropdown_menu");
+
+  dropdown.addEventListener("click", function (event) {
+      event.stopPropagation();
+      dropdownMenu.classList.toggle("open");
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", function () {
+      dropdownMenu.classList.remove("open");
+  });
+});
 
 
 

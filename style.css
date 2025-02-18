@@ -68,30 +68,36 @@ header {
     left: 0;
     width: 100%;
     background-color: white;
-    padding: 1em;
+    padding: 16px;
     display: none;  
     flex-direction: column;
     gap: 10px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     z-index: 100;
+    font-size: 20px;
+    font-weight: 500;
 }
 
 
 .nav_links.open {
     color: #000;
-    background: #898989;
+    background: #f6f3f3;
     display: flex;
+    
 }
 
 
 .nav_links li {
+    background-color: #cfbfb7;
+    border-radius: 5px;
     text-align: start;
-    padding: 0 20px;
+    padding: 10px;
     display: inline-block;
-    width: 100%;
+    width: 80%;
     border: 0;
     border-bottom-width: 1px;
-    border-style: solid;
+    border-top-width: 1px;
+    border-style:  solid;
 }
 
 .nav_links a {
@@ -105,7 +111,34 @@ header {
     color: #d94948;
 }
 
+.dropdown_menu {
+    display: none;
+}
 
+.dropdown_menu.open {
+    display: block;
+}
+
+
+/* Show dropdown on hover */
+/* .dropdown:hover .dropdown_menu {
+    display: block;
+} */
+
+ 
+.dropdown_menu li {
+    padding: 8px 15px;
+}
+
+.dropdown_menu a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.dropdown_menu a:hover {
+    background-color: #f0f0f0;
+}
 
 
 .aic_logo {
