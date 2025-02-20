@@ -120,21 +120,34 @@ header {
 }
 
 
-.team_our {
-background-color: #4D4E53;
+
+body {
+ 
+background-color: #9fa0a5;
 
 }
 
 
-.team_our { l
-background-color: ;
+
+
+
+.team_our ul { 
+background-image: url(./images/Church\ -\ Google\ Chrome\ 16_02_2025\ 15_46_46.png), radial-gradient(circle, rgba(255, 255, 255, 0));
 }
-/* Show dropdown on hover */
+    /* Show dropdown on hover */
 /* .dropdown:hover .dropdown_menu {
     display: block;
 } */
 
- 
+#btn-prog {
+    background-color: #1f517e;
+    padding: 10px;
+    border-radius: 2px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+
 .dropdown_menu li {
     padding: 8px 15px;
 }
