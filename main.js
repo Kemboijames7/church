@@ -63,3 +63,40 @@ scrollTopButton.addEventListener('click', () => {
       
   });
 });
+
+const subscribedEmails = new Set(); // Set to store unique emails
+
+document.getElementById('subscribeForm').addEventListener('submit', function(event) {
+    event.preventDefault();  
+
+    const emailInput = document.getElementById('emailInput').value.trim();  
+    const notification = document.getElementById('subscribeNotification');
+
+    if (emailInput) {
+        if (subscribedEmails.has(emailInput)) {
+            
+            // If the email already exists in the Set
+            notification.textContent = `You are already subscribed with the email: ${emailInput}.`;
+            notification.style.color = '#B80000';
+            notification.style.fontWeight = 'bold';
+        } else {
+            // If it's a new email, add it to the Set
+            subscribedEmails.add(emailInput);
+            notification.textContent = `Thank you for subscribing! A confirmation email has been sent to ${emailInput}.`;
+            notification.style.color = 'green';
+            notification.style.fontWeight = 'bold';
+        }
+    } else {
+        notification.textContent = 'Please enter a valid email address.';
+        notification.style.color = 'red';
+    }
+
+    // Clear the input field after submission
+    document.getElementById('subscribeForm').reset();
+
+    setTimeout(() => {
+        notification.textContent = '';  
+    }, 10000);
+
+
+});

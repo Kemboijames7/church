@@ -159,9 +159,21 @@ background-image: url(./images/Church\ -\ Google\ Chrome\ 16_02_2025\ 15_46_46.p
 }
 
 .dropdown_menu a:hover {
-    background-color: #f0f0f0;
+    padding: 2px;
+    transition: color 1s ease;
+    text-align: center;
+    background-color: #706868;
+    border-radius: 10px;
 }
 
+.plans {
+    text-align: center;
+}
+
+.team_our{
+    text-align: center;
+    text-decoration: none;
+}
 
 .aic_logo {
     width: 40px;
