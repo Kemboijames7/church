@@ -175,6 +175,74 @@ background-image: url(./images/Church\ -\ Google\ Chrome\ 16_02_2025\ 15_46_46.p
     text-decoration: none;
 }
 
+ #testimonial-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns:repeat(3, 1fr);
+   flex-wrap: wrap;
+   margin-right: 5px;
+}
+
+.sermons {
+
+    border-radius: 10px;
+    padding: 35px 30px;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.serm-prog{
+    text-align: center;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 16px;
+    gap: 10px;
+    
+}
+
+.bank {
+    background-image: url(./images/Church\ -\ Google\ Chrome\ 16_02_2025\ 15_46_46.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 40px;
+    color: #fff;
+    font-size: 20px;
+   
+}
+
+.giving {
+    text-align: center;
+    padding: 40px;
+}
+
+.givings{
+    text-align: center;
+}
+
+.btn-pay {
+    
+    font-size: 16px;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    color: #fff;
+    background-color: #1f517e;
+    text-decoration: none;
+}
+
+.btn-pay:hover{
+    background-color: #020609;
+}
+
+
 .aic_logo {
     width: 40px;
     height: 40px;
@@ -225,6 +293,9 @@ nav {
     color: #ced4da;
 }
 
+.serm-prog {
+    text-align: center;
+}
 
 #our_Sermon {
   background-image: url(./images/Church\ -\ Google\ Chrome\ 16_02_2025\ 15_46_46.png), radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.8)); 
@@ -395,6 +466,9 @@ max-width: 50%;
 }
 textarea{
     border-radius: 10px;
+    color: #040a22;
+    font-size: 18px;
+    padding: 10px;
    
 }
 
@@ -428,7 +502,15 @@ line-height: 28px;
 padding: 10px;
 }
 
+#form-action {
+    display: flex;
+    justify-content: flex-start;
+     
+}
+
+
 .form-control {
+   
     padding: .375rem .75rem;
     font-size: 1rem;
     width: 85%;
@@ -453,6 +535,7 @@ padding: 10px;
     font-size: 14px;
     font-weight: 600;
     line-height: 1.5; 
+   
 }
 
 .sign_up:hover {
