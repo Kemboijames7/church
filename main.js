@@ -100,3 +100,41 @@ document.getElementById('subscribeForm').addEventListener('submit', function(eve
 
 
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const searchBar = document.getElementById("searchBar");
+    let searchTimeout; // Variable to store the timeout ID
+
+    searchBar.addEventListener("input", function () {
+        clearTimeout(searchTimeout); // Clear any previous timeout
+        
+        searchTimeout = setTimeout(() => {
+            const searchTerm = searchBar.value.trim().toLowerCase();
+            const contentElements = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li, span:not(.ignore-search), div:not(.ignore-search)");
+
+            contentElements.forEach(element => {
+            // Skip links
+              if (element.closest("a")) return;
+                element.normalize(); // Fix broken text nodes
+                
+                if (!element.hasAttribute("data-original")) {
+                    element.setAttribute("data-original", element.innerHTML);
+                }
+
+                let originalContent = element.getAttribute("data-original");
+
+                if (searchTerm === "") {
+                    element.innerHTML = originalContent; // Restore original text
+                    return;
+                }
+
+                // Create a safe regex without breaking structure
+                const regex = new RegExp(`(${searchTerm})`, "gi");
+                const newText = originalContent.replace(regex, `<mark class="highlight">$1</mark>`);
+                element.innerHTML = newText;
+            });
+
+        }, 1500); // 4 seconds delay
+    });
+});
+

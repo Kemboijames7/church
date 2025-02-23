@@ -264,20 +264,33 @@ nav {
 .container {
     background-color: rgb(170, 158, 143);
     padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 15px;
+   flex-wrap: wrap;
 
 }
+
+.container-bibmem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .container button {
     background-color: #066aab;
     color: white;
-    padding: 10px;
     border-radius: 10px;
+    font-size: 16px;
+    padding: 15px 30px;
 
 }
+.container button:hover {
+    background-color: #070808;
+}
+
 
 .container button :hover {
     color: #050504;
@@ -418,6 +431,24 @@ text-decoration: none;
    
 }
 
+.events-list{
+    text-align: center;
+}
+
+.load-more button {
+    border-radius: 37px;
+    border-width: 2px;
+    border-color: rgb(8, 101, 173);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.load-more button:hover{
+    background-color: #a1c4d7;
+}
+
 .contact_us{
     padding: 100px;
     text-align: center;
@@ -552,19 +583,26 @@ padding: 10px;
     background-color: rgb(32, 29, 29);
 }
 #footerId p {
-    padding: 5px;
+    padding: 2px;
 }
 
 .footer__socials a {
     text-decoration: none;
-    padding: 6px 10px;
-    margin-right: 5px;
     font-size: 1.25rem;
     color: #fff;
-    background-color: #3b5999;
-    border-radius: 100%;
     cursor: pointer;
     transition: 0.3s;
+    box-shadow: 0 5px 10px rgba(8, 157, 216, 0.1);
+  }
+
+  .footer__socials  .link-social:hover {
+    background-color: transparent;
+  }
+
+  .link-social {
+    padding: 6px 10px;
+    margin-right: 5px;
+    border-radius: 5px;
   }
 
   .footer__socials a .ri-facebook-fill{
@@ -572,7 +610,19 @@ padding: 10px;
     
   }
   .footer__socials a .ri-instagram-line{
-    background-color: #3b5999;
+    background-color: #e4405f;
+    
+  }
+  .footer__socials a .ri-twitter-x-line{
+    background-color: #55acee;
+    
+  }
+  .footer__socials a .ri-youtube-fill{
+    background-color: #cd201f;
+    
+  }
+  .footer__socials a .ri-vimeo-line{
+    background-color: #1ab7ea;
     
   }
 
