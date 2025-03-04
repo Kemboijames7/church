@@ -138,3 +138,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+const scrollRevealOption = {
+    distance: "30px",
+    origin: "top",
+    duration:650,
+};
+
+const sr = ScrollReveal();
+
+// Apply the reveal effect
+sr.reveal(".member", {
+    ...scrollRevealOption,
+    delay: 400,
+});
+
+// feature container
+ScrollReveal().reveal(".feature__card", {
+    ...scrollRevealOption,
+    interval: 400,
+  });
