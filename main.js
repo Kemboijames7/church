@@ -157,3 +157,31 @@ ScrollReveal().reveal(".feature__card", {
     ...scrollRevealOption,
     interval: 400,
   });
+
+
+  //youtube api
+
+  function onYouTubeIframeAPIReady() {
+    new YT.Player('player', {
+      height: '315',
+      width: '560',
+      videoId: 'TsKbOUadw7g',
+      playerVars: {
+        'autoplay': 1,       // 1 = Auto-play the video, 0 = Don't autoplay
+        'controls': 1,       // 1 = Show controls, 0 = Hide controls
+        'rel': 0,            // 0 = No related videos at the end, 1 = Show related videos
+        'modestbranding': 1, // 1 = Hide YouTube logo
+        'showinfo': 0,       // 0 = Hide video title and uploader info
+        'loop': 1,           // 1 = Loop the video (requires playlist param)
+        'playlist': 'TsKbOUadw7g', // Needed for looping a single video
+        'mute': 1,           // 1 = Start muted, 0 = Start with sound
+        'start': 0,         // Start at 30 seconds into the video
+        'end': 120,          // Stop at 120 seconds (2 minutes)
+        'playsinline': 1,    // 1 = Play in the inline player on mobile instead of fullscreen
+        'fs': 0,             // 0 = Disable fullscreen button, 1 = Allow fullscreen
+        'cc_load_policy': 1, // 1 = Force captions on (if available)
+        'iv_load_policy': 3, // 3 = Hide annotations
+        'disablekb': 1       // 1 = Disable keyboard controls
+      }
+    });
+  }
