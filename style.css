@@ -536,6 +536,30 @@ text-decoration: none;
     text-align: center;
     background-image: url(90883796_2757458754383709_6167988910149337088_n.jpg);
 }
+.bible {
+    text-align: center;
+}
+
+.free-bible {
+color: #FFFFFF;
+display: flex;
+flex-direction: column;
+align-items: center;
+height: 350px;
+justify-content: flex-end;
+overflow: hidden;
+background-repeat: no-repeat;
+background-size: 100% auto; 
+background-image: url(/images/king-james-bible-holy-bible-kjv-annotated-1.jpg);
+}
+#downloadBtn {
+    border-radius: 10px;
+}
+
+ #downloadBtn:hover {
+    background: rgb(227, 206, 13);
+    border-radius: 10px;
+}
 
 fieldset {
     max-width: 800px;

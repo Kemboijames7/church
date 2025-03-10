@@ -152,6 +152,7 @@ sr.reveal(".member", {
     delay: 400,
 });
 
+
 // feature container
 ScrollReveal().reveal(".feature__card", {
     ...scrollRevealOption,
@@ -185,3 +186,13 @@ ScrollReveal().reveal(".feature__card", {
       }
     });
   }
+
+
+document.getElementById("downloadBtn").addEventListener("click", function() {
+    const link = document.createElement("a");
+    link.href = "downloads/King-James-Version.pdf"; // Make sure the path is correct
+    link.download = "King-James-Version.pdf"; // Set the download filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+});
