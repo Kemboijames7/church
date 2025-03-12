@@ -72,6 +72,10 @@ document.getElementById('subscribeForm').addEventListener('submit', function(eve
     const emailInput = document.getElementById('emailInput').value.trim();  
     const notification = document.getElementById('subscribeNotification');
 
+    localStorage.setItem("emailEntered", emailInput);
+
+    const storedEmail = localStorage.getItem("emailEntered", emailInput);
+
     if (emailInput) {
         if (subscribedEmails.has(emailInput)) {
             
