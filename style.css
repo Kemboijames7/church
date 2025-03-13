@@ -770,7 +770,7 @@ padding: 10px;
         color: #fff;
         background-color: rgb(32, 29, 29);
         display: grid;
-        gap: .4rem;
+        gap: 1.5rem;
         grid-template-areas:
         "follow"
         "social"
@@ -792,7 +792,7 @@ padding: 10px;
 }
 
       @media screen and (min-width: 33em)   { 
-        #footerId {
+        .testimonial-grid {
             grid-template-areas:
             "follow social"
             "follow social"
@@ -818,3 +818,35 @@ padding: 10px;
         }
       }
       
+     #contact-footer {
+        display: grid;
+        gap: .4rem;
+        grid-auto-columns: 1fr;
+        grid-template-areas: 
+        "our_services"
+        "infor-newsletter"
+        "footerId"
+        ;
+     }
+
+     .our_services {
+        grid-area: our_services;
+     }
+
+     .infor-newsletter {
+        grid-area: infor-newsletter;
+     }
+
+     .footerId {
+        grid-area: footerId;
+     }
+
+        
+     @media screen and (min-width: 75em) {
+        .testimonial-grid {
+            grid-template-areas:
+            "our_services our_services"
+            "infor-newsletter"
+            "footerId";
+        }
+      }
