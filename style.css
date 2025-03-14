@@ -820,33 +820,33 @@ padding: 10px;
       
      #contact-footer {
         display: grid;
-        gap: .4rem;
+        gap: 1.5rem;
         grid-auto-columns: 1fr;
         grid-template-areas: 
-        "our_services"
-        "infor-newsletter"
-        "footerId"
+        "one"
+        "two"
+        "three"
         ;
      }
 
-     .our_services {
-        grid-area: our_services;
+    .foot-services:nth-child(1) {
+        grid-area: one;
      }
 
-     .infor-newsletter {
-        grid-area: infor-newsletter;
+     .foot-services:nth-child(2) {
+        grid-area: two;
      }
 
-     .footerId {
-        grid-area: footerId;
+     .foot-services:nth-child(3) {
+        grid-area: three;
      }
 
         
      @media screen and (min-width: 75em) {
-        .testimonial-grid {
+        #contact-footer{
             grid-template-areas:
-            "our_services our_services"
-            "infor-newsletter"
-            "footerId";
+            "one one "
+            "two"
+            "three three";
         }
       }
