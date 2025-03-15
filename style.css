@@ -699,6 +699,7 @@ padding: 10px;
     padding: 6px 10px;
     margin-right: 5px;
     border-radius: 5px;
+    
   }
 
   .footer__socials a .ri-facebook-fill{
@@ -766,11 +767,12 @@ padding: 10px;
     
 
     #footerId {
-        padding: 5px;
-        color: #fff;
-        background-color: rgb(32, 29, 29);
+        padding: 10px;
+        background-color: rgba(0, 22, 47, .92);
+        color: #FFFFFF;
         display: grid;
-        gap: 1.5rem;
+        gap: 1rem;
+        grid-auto-columns: 1fr;
         grid-template-areas:
         "follow"
         "social"
@@ -792,35 +794,36 @@ padding: 10px;
 }
 
       @media screen and (min-width: 33em)   { 
-        .testimonial-grid {
+        #footerId  {
             grid-template-areas:
-            "follow social"
-            "follow social"
+            "follow follow follow"
+            "social social social"
             "copyright copyright copyright";
 
         }
        
       }
       @media screen and (min-width: 54em) {
-        .testimonial-grid {
+        #footerId  {
             grid-template-areas:
-            "follow"
-             "social  copyright";
+            "follow social copyright"
+            "follow social copyright"
+            "follow social copyright";
         }
       }
       
       @media screen and (min-width: 75em) {
-        .testimonial-grid {
+        #footerId  {
             grid-template-areas:
-            "follow follow"
-            "social social"
+            "follow follow follow"
+            "social social ."
             "copyright copyright copyright";
         }
       }
       
      #contact-footer {
         display: grid;
-        gap: 1.5rem;
+        gap: 1rem;
         grid-auto-columns: 1fr;
         grid-template-areas: 
         "one"
@@ -828,6 +831,8 @@ padding: 10px;
         "three"
         ;
      }
+
+     
 
     .foot-services:nth-child(1) {
         grid-area: one;
@@ -838,15 +843,26 @@ padding: 10px;
      }
 
      .foot-services:nth-child(3) {
-        grid-area: three;
+        grid-area: three; 
+
      }
 
         
-     @media screen and (min-width: 75em) {
+     @media screen and (min-width: 60em) {
         #contact-footer{
             grid-template-areas:
-            "one one "
-            "two"
-            "three three";
+            "one one one"
+            "two two three"
+            "two two two";
         }
       }
+
+     @media screen and (min-width: 86em) {
+        #contact-footer{
+            grid-template-areas:
+           "one two three"
+            ;
+        }
+      }
+   
+
