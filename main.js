@@ -200,3 +200,65 @@ document.getElementById("downloadBtn").addEventListener("click", function() {
     link.click();
     document.body.removeChild(link);
 });
+
+
+
+const API_KEY = 'AIzaSyB27rmmHliyPUNfNwVIp3LIdnM-Llldusk';  // Replace with your API key
+const PLAYLIST_ID = 'PLVlQHNRLflP8-lDPOcKw-SvGqQ61PQ-SP';  // Replace with your playlist ID
+let nextPageToken = '';
+
+function loadVideos() {
+  $.get(`https://www.googleapis.com/youtube/v3/playlistItems`, {
+    part: 'snippet',
+    maxResults: 5, // Number of videos to load per click
+    playlistId: PLAYLIST_ID,
+    key: API_KEY,
+    pageToken: nextPageToken
+  }, function(data) {
+    nextPageToken = data.nextPageToken || ''; // Save next page token
+
+    data.items.forEach(item => {
+      const videoId = item.snippet.resourceId.videoId;
+      const videoTitle = item.snippet.title;
+      const videoThumb = item.snippet.thumbnails.medium.url;
+  
+      $('#videoContainer').append(`
+          <div class="video">
+              <iframe width="560" height="315" 
+                  src="https://www.youtube.com/embed/${videoId}" 
+                  frameborder="0" allowfullscreen>
+              </iframe>
+              <p>${videoTitle}</p>
+          </div>
+      `);
+  });
+  
+
+    if (!nextPageToken) {
+      $('#loadMore').hide(); // Hide button if no more videos
+    }
+  });
+}
+
+// Load initial videos
+$(document).ready(loadVideos);
+
+// Load more videos on button click
+$('#loadMore').click(loadVideos);
+
+
+
+
+data.items.forEach(item => {
+  const videoId = item.snippet.resourceId.videoId;
+  console.log("Video ID:", videoId); // Debugging
+
+  $('#videoContainer').append(`
+    <div class="video">
+      <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank">
+        <img src="${item.snippet.thumbnails.medium.url}" alt="${item.snippet.title}">
+        <p>${item.snippet.title}</p>
+      </a>
+    </div>
+  `);
+});
