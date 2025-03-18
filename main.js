@@ -203,7 +203,7 @@ document.getElementById("downloadBtn").addEventListener("click", function() {
 
 
 
-const API_KEY = 'AIzaSyB27rmmHliyPUNfNwVIp3LIdnM-Llldusk'; 
+const API_KEY = 'APIKEY'; 
 const PLAYLIST_ID = 'PLVlQHNRLflP8-lDPOcKw-SvGqQ61PQ-SP';  
 let nextPageToken = '';
 
