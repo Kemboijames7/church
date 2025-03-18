@@ -143,25 +143,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const scrollRevealOption = {
-    distance: "30px",
-    origin: "top",
-    duration:650,
+  distance: "30px",
+  origin: "top",
+  duration: 650,
 };
 
-const sr = ScrollReveal();
+const sr = ScrollReveal(); // Create a single instance
 
-// Apply the reveal effect
-sr.reveal(".member", {
-    ...scrollRevealOption,
-    delay: 400,
+ 
+sr.reveal(".ri-heart-3-line", {
+  ...scrollRevealOption,
+  delay: 400,
 });
 
+ 
+sr.reveal(".ri-book-open-fill", {
+  ...scrollRevealOption,
+  interval: 400,
+});
 
-// feature container
-ScrollReveal().reveal(".feature__card", {
-    ...scrollRevealOption,
-    interval: 400,
-  });
 
 
   //youtube api
@@ -203,19 +203,19 @@ document.getElementById("downloadBtn").addEventListener("click", function() {
 
 
 
-const API_KEY = 'AIzaSyB27rmmHliyPUNfNwVIp3LIdnM-Llldusk';  // Replace with your API key
-const PLAYLIST_ID = 'PLVlQHNRLflP8-lDPOcKw-SvGqQ61PQ-SP';  // Replace with your playlist ID
+const API_KEY = 'AIzaSyB27rmmHliyPUNfNwVIp3LIdnM-Llldusk'; 
+const PLAYLIST_ID = 'PLVlQHNRLflP8-lDPOcKw-SvGqQ61PQ-SP';  
 let nextPageToken = '';
 
 function loadVideos() {
   $.get(`https://www.googleapis.com/youtube/v3/playlistItems`, {
     part: 'snippet',
-    maxResults: 5, // Number of videos to load per click
+    maxResults: 5, 
     playlistId: PLAYLIST_ID,
     key: API_KEY,
     pageToken: nextPageToken
   }, function(data) {
-    nextPageToken = data.nextPageToken || ''; // Save next page token
+    nextPageToken = data.nextPageToken || ''; 
 
     data.items.forEach(item => {
       const videoId = item.snippet.resourceId.videoId;
@@ -235,7 +235,7 @@ function loadVideos() {
   
 
     if (!nextPageToken) {
-      $('#loadMore').hide(); // Hide button if no more videos
+      $('#loadMore').hide(); 
     }
   });
 }

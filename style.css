@@ -105,10 +105,12 @@ header {
     color: #0f172a;
     font-size: 1rem;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .nav_links a:hover {
     color: #d94948;
+   
 }
 
 .dropdown_menu {
@@ -126,10 +128,6 @@ body {
 background-color: #9fa0a5;
 
 }
-
-
-
-
 
 .team_our ul { 
 background-image: url(./images/Church\ -\ Google\ Chrome\ 16_02_2025\ 15_46_46.png), radial-gradient(circle, rgba(255, 255, 255, 0));
@@ -156,9 +154,11 @@ background-image: url(./images/Church\ -\ Google\ Chrome\ 16_02_2025\ 15_46_46.p
     text-decoration: none;
     color: black;
     display: block;
+     cursor: pointer;
 }
 
 .dropdown_menu a:hover {
+    cursor:pointer;
     padding: 2px;
     transition: color 1s ease;
     text-align: center;
@@ -766,6 +766,98 @@ padding: 10px;
     -webkit-animation: shadow-blink 0.7s ease-out infinite forwards;
 }
 
+/* Hide menu button on larger screens */
+@media screen and (min-width: 768px) { 
+    .nav_menu_btn {
+        display: none;
+    }
+
+    .nav_links   {
+        display: flex !important;
+        justify-content: center;
+        flex-direction: row;
+        gap:0;
+        position: relative;
+        background-color: #cfbfb7;
+        border: none;
+        background: none;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+    }
+
+    #nav-links li {
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        background:none;
+        text-align: center;
+        display: inline-block;
+        border: none;
+        
+    }
+
+    .nav-link {
+        cursor: pointer;
+        padding: 10px 20px;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 600;
+        border-bottom-width: 1px;
+        border-bottom-color: rgba(245, 245, 245, 1);
+        border-bottom-style: solid;
+    }
+ .dropdown_menu {
+    margin-top: 10px;
+    background-color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 10px;
+    position: absolute;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(245, 245, 245, 1);
+    border-bottom-style: solid;
+    list-style: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    z-index: 100;
+    text-align: start;
+ }
+
+    
+}
+
+/* Show menu small screens */
+@media screen and (max-width: 767px) {
+    .nav_menu_btn {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+        padding: 0;
+    }
+
+    .nav_links   {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+        
+    }
+
+    
+    .nav_links.open {
+        display: flex;
+    }
+}
+
+
 #section-1 {
     display: flex;
     flex-direction: column;
@@ -861,9 +953,9 @@ padding: 10px;
       @media screen and (min-width: 33em)   { 
         #footerId  {
             grid-template-areas:
-            "follow follow follow"
-            "social social social"
-            "copyright copyright copyright";
+            "follow ."
+            "social social"
+            ". copyright .";
 
         }
        
@@ -871,9 +963,9 @@ padding: 10px;
       @media screen and (min-width: 58em) {
         #footerId  {
             grid-template-areas:
-            "follow social copyright"
-            "follow social copyright"
-            "follow social copyright";
+            "follow follow follow"
+            "social social social"
+            "copyrightcopyright copyright";
         }
       }
       
@@ -913,6 +1005,15 @@ padding: 10px;
      }
 
         
+  
+     @media screen and (min-width: 30em) {
+        #contact-footer{
+            grid-template-areas:
+            "one one one"
+            "two two two"
+            ". three ";
+        }
+      }
      @media screen and (min-width: 60em) {
         #contact-footer{
             grid-template-areas:
