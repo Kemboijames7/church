@@ -6,21 +6,23 @@ const cors = require("cors");
 const app = express();
 app.use(express.json());
 app.use(cors());
-// Debugging: Check if MONGO_URI is loaded
-console.log("MONGO_URI:", process.env.MONGO_URI);
+
+
+require("dotenv").config();
+
+const MONGO_URI = process.env.MONGO_URI;
 
 mongoose
-.connect('process.env.MONGO_URI', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-  .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.log(err));
+  .connect(MONGO_URI)
+  .then(() => console.log("✅ MongoDB connected successfully!"))
+  .catch((err) => console.error("❌ MongoDB Connection Error:", err));
+
 
   app.get("/", (req, res) => {
     res.send("Welcome to Aic Fellowship Annex Church Website API!");
   });
 
+  
   const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
