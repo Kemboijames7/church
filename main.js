@@ -2,19 +2,21 @@
 
 const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.getElementById("nav-links");
-const menuBtnIcon = menuBtn.querySelector("i");
+const menuBtnIcon = document.querySelector("i");
 
-menuBtn.addEventListener("click", (e) => {
-  navLinks.classList.toggle("open");
+if (menuBtn && navLinks && menuBtnIcon) {
+  menuBtn.addEventListener("click", (e) => {
+    navLinks.classList.toggle("open");
 
-  const isOpen = navLinks.classList.contains("open");
-  menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line")
-});
-navLinks.addEventListener("click", () => {
-  navLinks.classList.remove("open");
- menuBtnIcon.setAttribute("class", "ri-menu-line");
+    const isOpen = navLinks.classList.contains("open");
+    menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
+  });
 
-})
+  navLinks.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuBtnIcon.setAttribute("class", "ri-menu-line");
+  });
+}
 
 
 
@@ -32,11 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
       dropdownMenu.classList.remove("open");
   });
 });
-
-
-
-
-
 
 const scrollTopButton = document.querySelector('.back-to-top');
 
@@ -148,16 +145,13 @@ const scrollRevealOption = {
   duration: 650,
 };
 
-const sr = ScrollReveal(); // Create a single instance
-
- 
-sr.reveal(".ri-heart-3-line", {
+ScrollReveal().reveal(".ri-heart-3-line", {
   ...scrollRevealOption,
   delay: 400,
 });
 
  
-sr.reveal(".ri-book-open-fill", {
+ScrollReveal().reveal(".ri-book-open-fill", {
   ...scrollRevealOption,
   interval: 400,
 });
@@ -172,33 +166,40 @@ sr.reveal(".ri-book-open-fill", {
       width: '560',
       videoId: 'TsKbOUadw7g',
       playerVars: {
-        'autoplay': 1,       // 1 = Auto-play the video, 0 = Don't autoplay
-        'controls': 1,       // 1 = Show controls, 0 = Hide controls
-        'rel': 0,            // 0 = No related videos at the end, 1 = Show related videos
-        'modestbranding': 1, // 1 = Hide YouTube logo
-        'showinfo': 0,       // 0 = Hide video title and uploader info
-        'loop': 1,           // 1 = Loop the video (requires playlist param)
-        'playlist': 'TsKbOUadw7g', // Needed for looping a single video
-        'mute': 1,           // 1 = Start muted, 0 = Start with sound
-        'start': 0,         // Start at 30 seconds into the video
-        'end': 120,          // Stop at 120 seconds (2 minutes)
-        'playsinline': 1,    // 1 = Play in the inline player on mobile instead of fullscreen
-        'fs': 0,             // 0 = Disable fullscreen button, 1 = Allow fullscreen
-        'cc_load_policy': 1, // 1 = Force captions on (if available)
-        'iv_load_policy': 3, // 3 = Hide annotations
-        'disablekb': 1       // 1 = Disable keyboard controls
+        'autoplay': 1,       
+        'controls': 1,      
+        'rel': 0,         
+        'modestbranding': 1, 
+        'showinfo': 0,      
+        'loop': 1,         
+        'playlist': 'TsKbOUadw7g', 
+        'mute': 1,           
+        'start': 0,        
+        'end': 120,         
+        'playsinline': 1,   
+        'fs': 0,           
+        'cc_load_policy': 1, 
+        'iv_load_policy': 3, 
+        'disablekb': 1      
       }
     });
   }
 
 
-document.getElementById("downloadBtn").addEventListener("click", function() {
+document.getElementById("downloadBtn").addEventListener("click", async () => {
+  console.log("downloadBtn clicked");
+  try {
+    const response = await fetch("downloads/King-James-Version.pdf");
+    const blob = await response.blob();
     const link = document.createElement("a");
-    link.href = "downloads/King-James-Version.pdf"; // Make sure the path is correct
-    link.download = "King-James-Version.pdf"; // Set the download filename
+    link.href = URL.createObjectURL(blob);
+    link.download = "King-James-Version.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+} catch (error) {
+    console.error("Download failed:", error);
+}
 });
 
 

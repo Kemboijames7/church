@@ -6,14 +6,19 @@ const cors = require("cors");
 const app = express();
 app.use(express.json());
 app.use(cors());
+// Debugging: Check if MONGO_URI is loaded
+console.log("MONGO_URI:", process.env.MONGO_URI);
 
 mongoose
-  .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+.connect('process.env.MONGO_URI', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
 
   app.get("/", (req, res) => {
-    res.send("Welcome to the Church Website API!");
+    res.send("Welcome to Aic Fellowship Annex Church Website API!");
   });
 
   const PORT = process.env.PORT || 5000;
