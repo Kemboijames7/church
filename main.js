@@ -186,21 +186,23 @@ ScrollReveal().reveal(".ri-book-open-fill", {
   }
 
 
-document.getElementById("downloadBtn").addEventListener("click", async () => {
-  console.log("downloadBtn clicked");
-  try {
-    const response = await fetch("downloads/King-James-Version.pdf");
-    const blob = await response.blob();
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "King-James-Version.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-} catch (error) {
-    console.error("Download failed:", error);
-}
-});
+  document.getElementById("downloadBtn").addEventListener("click", async () => {
+    console.log("Download button clicked");
+    try {
+      const response = await fetch("/downloads/King-James-Version.pdf");
+      if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+  
+      const blob = await response.blob();
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "King-James-Version.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error("Download failed:", error);
+    }
+  });
 
 
 let uri = process.env.APIKEY
@@ -263,3 +265,49 @@ data.items.forEach(item => {
     </div>
   `);
 });
+
+
+
+//Church-website-backend
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const sermonList = document.getElementById("sermon-list");
+
+  try {
+      // Fetch sermons from API
+      const response = await fetch("http://localhost:5000/sermons");
+      const sermons = await response.json();
+
+      // Loop through sermons and display them
+      sermons.forEach(sermon => {
+          const sermonDiv = document.createElement("div");
+          sermonDiv.classList.add("sermon");
+
+          sermonDiv.innerHTML = `
+              <h2>${sermon.theme}</h2>
+              <p><strong>Pastor:</strong> ${sermon.pastor}</p>
+              <p><strong>Scripture:</strong> ${sermon.scripture}</p>
+              <p><strong>Date:</strong> ${new Date(sermon.date).toDateString()}</p>
+              <button onclick="viewSermon('${sermon.slug}')">Read More</button>
+          `;
+
+          sermonList.appendChild(sermonDiv);
+      });
+  } catch (error) {
+      console.error("Error fetching sermons:", error);
+  }
+});
+
+//  the sermon index.html
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector(".viewSermon").addEventListener("click", function () {
+      viewSermon("understanding-gods-life-plan");
+  });
+});
+
+// Function to navigate to the sermon page
+function viewSermon(slug) {
+  console.log("Navigating to sermon:", slug); // Debugging
+  window.location.href = `/sermon.html?slug=${slug}`;
+}
+

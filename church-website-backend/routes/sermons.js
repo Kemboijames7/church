@@ -1,29 +1,31 @@
 const express = require("express");
-const Sermon = require("../models/Sermon");
 const router = express.Router();
+const Sermon = require("../models/Sermon");
 
 // Get all sermons
-router.get("/", async (req, res) => {
-  try {
-    const sermons = await Sermon.find();
-    res.json(sermons);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
+router.get("/sermons", async (req, res) => {
+    try {
+        const sermons = await Sermon.find();
+        res.json(sermons);
+    } catch (err) {
+        res.status(500).json({ error: "Failed to fetch sermons" });
+    }
 });
 
-// Get a single sermon by ID
-router.get("/:id", async (req, res) => {
-  try {
-    const sermon = await Sermon.findById(req.params.id);
-    if (!sermon) {
-      return res.status(404).json({ message: "Sermon not found" });
+// Get a single sermon by slug
+router.get("/sermon/:slug", async (req, res) => {
+    try {
+     
+        const sermon = await Sermon.findOne({ slug: req.params.slug });
+        if (!sermon) {
+       
+            return res.status(404).json({ error: "Sermon not found" });
+        }
+        res.json(sermon);
+    } catch (err) {
+      console.error("❌ Error fetching sermon:", err);
+        res.status(500).json({ error: "Failed to fetch sermon" });
     }
-    res.json(sermon);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
 });
 
 module.exports = router;
-

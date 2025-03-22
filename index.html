@@ -92,14 +92,20 @@
         <H1>Latest Sermons</H1>
        
 
-        <div class="latest_sermon">
+        <div class="latest_sermon sermon-container">
 
             <div id="player"></div>
+            <h2 id="sermon-title"></h2>
             <p><strong> <cite><span><i class="ri-cross-line"></i></span> UNDERSTANDING GOD'S LIFE PLAN FOR YOU </cite> </strong> </p>
-             <blockquote>Sermon By:  REV Joshua Mbithi </blockquote>
+            <blockquote>Sermon By: <span id="sermon-pastor"></span></blockquote>
+            <blockquote>Reading: <span id="sermon-scripture"></span></blockquote>
+            <blockquote><i class="ri-time-line"> <span id="sermon-date"></span></i></blockquote>
+            <p id="sermon-notes"></p>
+            <blockquote>Sermon By:  REV Joshua Mbithi </blockquote>
              <blockquote>Reading: Isaiah 49:13-16 </blockquote>
             <blockquote><i class="ri-time-line">   Feb 16, 2025</i></blockquote>
-            <button>Read More</button>
+            <button onclick="viewSermon('understanding-gods-life-plan')">Read More</button>
+           
         </div>
 
 
