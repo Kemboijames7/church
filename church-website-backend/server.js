@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const sermonRoutes = require("./routes/sermon");
+const sermonRoutes = require("./routes/sermons");
 
 const app = express();
 

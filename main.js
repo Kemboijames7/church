@@ -299,15 +299,36 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 //  the sermon index.html
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelector(".viewSermon").addEventListener("click", function () {
-      viewSermon("understanding-gods-life-plan");
+document.querySelectorAll('.read-more').forEach(button => {
+  button.addEventListener('click', function() {
+      const slug = this.getAttribute('data-slug');
+      window.location.href = `sermon.html?slug=${encodeURIComponent(slug)}`;
   });
 });
 
-// Function to navigate to the sermon page
-function viewSermon(slug) {
-  console.log("Navigating to sermon:", slug); // Debugging
-  window.location.href = `/sermon.html?slug=${slug}`;
+
+// Get the query parameters
+const params = new URLSearchParams(window.location.search);
+const slug = params.get('slug');
+
+if (slug) {
+    document.getElementById('sermon-title').textContent = slug.replace(/-/g, ' '); // Format slug
+} else {
+    document.getElementById('sermon-title').textContent = "Sermon Not Found";
 }
+
+
+document.querySelectorAll('.latest_sermon button').forEach(button => {
+  button.addEventListener('click', function () {
+      // Extracting details (in real cases, it should be a unique identifier like 'slug' or 'id')
+      const sermonTitle = this.parentElement.querySelector('cite').textContent.trim();
+      const sermonSlug = sermonTitle.toLowerCase().replace(/ /g, '-'); // Convert to slug format
+
+      console.log("Navigating to:", `sermon.html?slug=${sermonSlug}`);
+
+      // Redirecting to sermon.html with slug
+      window.location.href = `sermon.html?slug=${encodeURIComponent(sermonSlug)}`;
+  });
+});
+
 
