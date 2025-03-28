@@ -41,10 +41,3 @@ The Church Website is an online platform designed to connect the congregation an
    ```
    http://localhost:3000
    ```
-
-#### **Future Enhancements**  
-- Implement user authentication for personalized access.  
-- Add a mobile app version for better accessibility.  
-- Integrate an automated Bible study scheduler.  
-
-Would you like to include any additional details, such as volunteer sign-ups or service schedules? 😊
